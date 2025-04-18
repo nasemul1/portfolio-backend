@@ -79,7 +79,6 @@ const singleProject = async (req, res) => {
 // remove project
 const removeProject = async (req, res) => {
     try {
-        
         await projectsModel.findByIdAndDelete(req.body.projectId);
         res.json({success:true, message: "project Removed"})
 

@@ -4,7 +4,8 @@ import 'dotenv/config'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 import projectsRouter from './routes/projectsRouter.js'
-
+import certificatesRouter from './routes/certificatesRouter.js'
+import userRouter from './routes/userRouter.js'
 
 const app = express()
 const port = process.env.PORT || 4000;
@@ -21,6 +22,8 @@ app.use('/uploads', express.static('uploads'));
 // api endpoints
 
 app.use('/api/projects', projectsRouter);
+app.use('/api/certificates', certificatesRouter);
+app.use('/api/user', userRouter);
 
 app.get('/', (req, res)=>{
 	res.send("API Working")
